@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Lazy Loading Using Last Record Id Example" icon-name="standard:people_score">
+        <div class="slds-m-around_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={accData}
+                columns={columns}
+                hide-checkbox-column
+                show-row-number-column
+                enable-infinite-loading
+                onloadmore={LoadMoreData}
+                ></lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

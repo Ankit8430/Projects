@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Calorie Tracker" icon-name="standard:nutrition">
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-gutters slds-mb-small">
+                <div class="slds-col">
+                    <lightning-input label="Food" name="newFood" value={newFood} onchange={handleInputChange}></lightning-input>
+                </div>
+                <div class="slds-col">
+                    <lightning-input label="Calories" type="number" name="newCalories" value={newCalories} onchange={handleInputChange}></lightning-input>
+                </div>
+                <div class="slds-col">
+                    <lightning-combobox label="Meal" name="newMeal" value={newMeal} options={mealOptions} onchange={handleInputChange}></lightning-combobox>
+                </div>
+                <div class="slds-col slds-align-bottom">
+                    <lightning-button label="Add Food" variant="brand" onclick={handleAddFood}></lightning-button>
+                </div>
+            </div>
+            <template for:each={meals} for:item="meal">
+                <div key={meal.name} class="slds-m-bottom_medium">
+                    <h3 class="slds-text-heading_small slds-m-bottom_x-small">{meal.name} - {meal.totalCalories} calories</h3>
+                    <ul class="slds-has-dividers_bottom-space">
+                        <template for:each={meal.foods} for:item="food">
+                            <li key={food.id} class="slds-item slds-grid slds-grid_vertical-align-center">
+                                <span class="slds-col">{food.name} - {food.calories} calories</span>
+                                <lightning-button-icon
+                                    icon-name="utility:delete"
+                                    alternative-text="Remove"
+                                    title="Remove"
+                                    class="slds-col_bump-left"
+                                    onclick={handleRemoveFood}
+                                    data-meal-name={meal.name}
+                                    data-food-id={food.id}>
+                                </lightning-button-icon>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+            <div class="slds-text-heading_medium slds-m-top_medium">
+                Total Daily Calories: {totalDailyCalories}
+            </div>
+        </div>
+    </lightning-card>
+</template>

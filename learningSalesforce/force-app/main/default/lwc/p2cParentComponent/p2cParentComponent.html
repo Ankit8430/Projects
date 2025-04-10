@@ -1,0 +1,24 @@
+<template>
+    <!-- Example of P to C for Non-Primitive Data -->
+    <c-p2c-alert-component
+    message="Hurry, I got data!!"
+    cardheading="Parent to Child Primitive data communication"
+    number=10
+    is-visible=true>
+</c-p2c-alert-component>
+<div class="slds-var-m-bottom_medium"> </div>
+<!-- Example of P to C for Primitive Data -->
+<c-p2c-carousel-component
+carousel-details={carouselData}></c-p2c-carousel-component>
+<!-- Example of P to C on action at parent component -->
+<div class="slds-var-m-bottom_medium"></div>
+<lightning-input type="number" label="Enter Percentage" onkeyup={changeHandler}></lightning-input>
+<c-p2c-progress-component progress={percentage}></c-p2c-progress-component>
+
+<!-- Example Calling Child Method from Parent Component -->
+ <div class="slds-var-m-bottom_medium"></div>
+<lightning-button variant="brand"
+    label="Reset Slider" onclick={handleClick}
+></lightning-button>
+<c-p2c-slider-component></c-p2c-slider-component>
+</template>

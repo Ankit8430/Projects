@@ -1,0 +1,10 @@
+<template>
+    <template if:true={accounts.data}>
+        <template for:each={accounts.data} for:item="account">
+            <div key={account.Id}>
+                <p>Name: {account.Name}</p>
+                <p>Type: {account.Type}</p>
+            </div>
+        </template>
+    </template>
+</template>

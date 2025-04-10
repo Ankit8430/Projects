@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="ToDo App">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Task Name" name="newTask" value={newTask} onchange={handleChange}></lightning-input>
+            <lightning-input type="text" label="Duration (minutes)" name="newDuration" value={newDuration} onchange={handleChange}></lightning-input>
+            <lightning-comboBox label="Category" name="newCategory"  value={newCategory} options={categorieOptions} onchange={handleChange}></lightning-comboBox>
+            <lightning-button label="Add Task" variant="brand" onclick={handleAddTask}></lightning-button>
+        </div>
+        <lightning-card title="Pending Tasks (Total)">
+            <div class="slds-m-around_medium">
+                <template for:each={tasks} for:item="task">
+                    <div key={task.id}>
+                            <b>{task.name}</b> ({task.duration})
+                            Category:{task.category}
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+    </lightning-card>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-card title="Total Opportunities">
+                <template lwc:if={pieChartLabels.length}>
+                    <c-charts
+                    type="doughnut"
+                    chart-heading="Opportunities"
+                    chart-data={pieChartData}
+                    chart-labels={pieChartLabels}></c-charts>
+                </template>
+            </lightning-card>
+        </lightning-layout-item>
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-card title="Total Opportunities">
+                <c-charts></c-charts>
+            </lightning-card>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

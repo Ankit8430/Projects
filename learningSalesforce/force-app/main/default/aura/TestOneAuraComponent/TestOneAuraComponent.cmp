@@ -1,0 +1,5 @@
+<aura:component controller="TestOneApexController">
+    <aura:attribute name="message" type="String"/>
+    <lightning:button label="Click Me" onclick="{!c.fetchData}"/>
+    <p>{!v.message}</p>
+</aura:component>

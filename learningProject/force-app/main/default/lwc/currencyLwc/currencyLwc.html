@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Curreny Api">
+        <lightning-combobox name="fromcurr" label="From Currency"
+        value={fromcurrency}
+        placeholder="Select Currency"
+        options={currencyOptions}
+        class="slds-var-p-around_small"
+        onchange={handleInputChange}>
+        </lightning-combobox>
+        <lightning-combobox name="tocurr" label="To Currency"
+            value={toCurrency}
+            placeholder="Select Currency"
+            options={currencyOptions}
+            class="slds-var-p-around_small"
+            onchange={handleInputChange}>
+            </lightning-combobox>
+    </lightning-card>
+</template>

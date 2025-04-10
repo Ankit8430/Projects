@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="Query Selector">
+        <template for:each={userNames} for:item="user">
+            <div class="name" key={user}>{user}</div>
+        </template>
+        <button onclick={fetchDetails}>Click Me</button>
+    </lightning-card>
+</template>

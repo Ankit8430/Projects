@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title={cardheading}>
+        <div class="slds-notify_alert slds-alert_error" role="alert">
+           {message}
+        </div>
+        <template lwc:if={isVisible}>
+            {number}
+        </template>
+    </lightning-card>
+</template>

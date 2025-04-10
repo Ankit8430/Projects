@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Create Account">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Account Name" value={accountName} onchange={handleChange}></lightning-input>
+            <lightning-input label="Account Phone" value={accountPhone} onchange={handleChange}></lightning-input>
+            <lightning-input label="Annual Revenue" value={accountAnnualRevenue} type="number" onchange={handleChange}></lightning-input>
+        </div>
+    </lightning-card>    
+</template>

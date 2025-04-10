@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Employee Data" icon-name="custom:custom63">
+        <div class="slds-p-around_medium">
+            <lightning-input 
+                label="Name" 
+                type="text" 
+                name="name"
+                value={employee.name} 
+                onchange={handleChange}
+            required></lightning-input>
+            <lightning-input
+                label="Age"
+                type="number"
+                name="age"
+                value={employee.age}
+                onchange={handleChange}
+                required></lightning-input>
+            <lightning-input
+                label="Email"
+                type="email"
+                name="email"
+                value={employee.email}
+                onchange={handleChange}
+                required></lightning-input>
+            <lightning-input 
+                label="CTC"
+                type="number"
+                name="ctc"
+                value={employee.ctc}
+                onchange={handleChange}
+                required></lightning-input>
+            <lightning-button
+                label="Save"
+                variant="brand"
+                onclick={handleSave}
+                disabled={isSaveDisabled}
+                class="slds-m-left_x-small"
+            ></lightning-button>
+        </div>
+    </lightning-card>
+    <lightning-card title="Employee List" icon-name="standard:employee">
+        <lightning-datatable
+         key-field="email"
+         data={employeeList}
+         columns={columns}
+        ></lightning-datatable>
+    </lightning-card>
+</template>

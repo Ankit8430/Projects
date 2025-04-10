@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="getNavItem Adapter">
+        <div class="slds-p-around_medium">
+            <template lwc:if={result}>
+                <div>DevloperName : {result.developerName}</div>
+                <div>ObjectApiName: {result.objectApiName}</div>
+                <div>pageReference: {result.pageReference.type}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

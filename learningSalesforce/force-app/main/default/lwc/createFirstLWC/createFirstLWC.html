@@ -1,0 +1,11 @@
+<template>
+    <lightning-card>
+        <ul>
+            <div class="slds-var-m-around_medium">
+                <template for:each={carList} for:item="car">
+                    <li key={car}>{car}</li>
+                </template>
+            </div>
+        </ul>
+    </lightning-card>
+</template>

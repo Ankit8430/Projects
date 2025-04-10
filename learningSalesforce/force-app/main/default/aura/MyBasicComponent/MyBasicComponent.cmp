@@ -1,0 +1,5 @@
+<aura:component controller="MyAuraController">
+    <aura:attribute name="serverMessage" type="String"/>
+    <lightning:button label="Fetch from Server" onclick="{!c.fetchMessage}"/>
+    <p>{!v.serverMessage}</p>
+</aura:component>
